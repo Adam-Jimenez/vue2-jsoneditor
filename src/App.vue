@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <json-editor :json="json"/>
+     <json-editor ref="editor" :onChange="onChange" :json="json"/>
   </div>
 </template>
 
@@ -20,6 +20,11 @@ export default {
           'foo': 'bar'
         }
       }
+    }
+  },
+  methods: {
+    onChange (newVal) {
+      console.log(newVal)
     }
   },
   components: {

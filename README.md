@@ -9,6 +9,18 @@ import JSONEditor from 'vue2-jsoneditor'
 
 export default {
     name: 'app',
+    data () {
+        return {
+            json: {
+                foo: 'bar'
+            }
+        }
+    }
+    methods: {
+         onChange(newJson) {
+            // handle json changes
+         }
+    }
     components: {
         JSONEditor
     }
@@ -19,8 +31,25 @@ Then you can use it like this in your template:
 
 ```
 <template>
-    <json-editor :json="{ foo: 'bar'}" />
+    <json-editor :onChange="onChange" :json="json" />
 </template>
+```
+
+You can also put a ref on the editor to access the JsonEditor object directly:
+
+```
+<template>
+    <json-editor ref="editor" />
+</template>
+    
+```
+
+After you can access it like this:
+
+```
+const editor = this.$refs.editor.editor // a little redundant, but it does the trick!
+editor.set(...) // At this point, you can use the methods available here: https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#methods
+
 ```
 
 ## Build Setup

@@ -7,6 +7,7 @@
 
 import JSONEditor from 'jsoneditor/dist/jsoneditor-minimalist.js'
 import 'jsoneditor/dist/jsoneditor.min.css'
+import _ from 'lodash'
 
 export default {
   name: 'json-editor',
@@ -24,18 +25,34 @@ export default {
       default: () => {
         return {}
       }
+    },
+    onChange: {
+      type: Function
     }
   },
   watch: {
-    json (newJson) {
-      if (this.editor) {
-        this.editor.set(newJson)
+    json: {
+      handler (newJson) {
+        if (this.editor) {
+          this.editor.set(newJson)
+        }
+      },
+      deep: true
+    }
+  },
+  methods: {
+    _onChange (e) {
+      if (this.onChange && this.editor) {
+        this.onChange(this.editor.get())
       }
     }
   },
   mounted () {
     const container = this.$refs.jsoneditor
-    const options = this.options
+    const options = _.extend({
+      onChange: this._onChange
+    }, this.options)
+
     this.editor = new JSONEditor(container, options)
     this.editor.set(this.json)
   },
