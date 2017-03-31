@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "vue2-jsoneditor",
   "version": "1.0.0",
-  "description": "y",
+  "description": "Vue.js 2.* jsoneditor Wrapper",
   "author": "Adam Jimenez <ajimene1@matrox.com>",
   "private": true,
   "scripts": {
@@ -9,9 +9,10 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
-    "lint": "eslint --ext .js,.vue src test/unit/specs"
+    "lint": "eslint --fix --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "jsoneditor": "5.5.11",
     "vue": "^2.2.2"
   },
   "devDependencies": {

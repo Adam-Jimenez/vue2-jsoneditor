@@ -1,6 +1,4 @@
-# y
-
-> y
+# Vue2 json editor Wrapper
 
 ## Build Setup
 

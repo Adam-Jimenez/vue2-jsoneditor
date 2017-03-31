@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+     <json-editor :json="json"/>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import JsonEditor from './components/JsonEditor'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      json: {
+        'integer': 42,
+        'float': 1.24,
+        'string': 'foo',
+        'array': ['one', 2, 'three'],
+        'object': {
+          'foo': 'bar'
+        }
+      }
+    }
+  },
   components: {
-    Hello
+    JsonEditor
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
