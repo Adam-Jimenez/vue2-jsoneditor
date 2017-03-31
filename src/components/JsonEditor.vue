@@ -26,6 +26,13 @@ export default {
       }
     }
   },
+  watch: {
+    json (newJson) {
+      if (this.editor) {
+        this.editor.set(newJson)
+      }
+    }
+  },
   mounted () {
     const container = this.$refs.jsoneditor
     const options = this.options
