@@ -3,4 +3,5 @@ config/
 dist/
 static/
 test/
-
+index.html
+tags
