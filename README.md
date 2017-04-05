@@ -2,7 +2,7 @@
 
 ## Usage
 
-Importing: 
+Importing:
 
 ```
 import JSONEditor from 'vue2-jsoneditor'
@@ -28,6 +28,7 @@ export default {
 ```
 
 Then you can use it like this in your template:
+Note: onChange handler is optional
 
 ```
 <template>
@@ -41,10 +42,10 @@ You can also put a ref on the editor to access the JsonEditor object directly:
 <template>
     <json-editor ref="editor" />
 </template>
-    
+
 ```
 
-After you can access it like this:
+if you need, you can access the editor instance like this:
 
 ```
 const editor = this.$refs.editor.editor // a little redundant, but it does the trick!
@@ -62,12 +63,6 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build component
-npm run build:component
-
-# run all tests
-npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
