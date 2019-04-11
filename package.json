@@ -1,8 +1,9 @@
 {
   "name": "vue2-jsoneditor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Vue.js 2.* jsoneditor Wrapper",
   "author": "Adam Jimenez <jimenez.adam0@gmail.com>",
+  "homepage": "git@github.com:Adam-Jimenez/vue2-jsoneditor.git",
   "private": false,
   "main": "src/components/JsonEditor.vue",
   "scripts": {
